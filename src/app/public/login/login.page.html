@@ -1,0 +1,23 @@
+<ion-content padding color="danger">
+<ion-card-header padding color ="primary">
+  Bienvenido a la app de Escuela perro
+</ion-card-header>
+<form action="">
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Email: </ion-label>
+        <ion-input name="pEmail" [(ngModel)] = "user.pEmail"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Password: </ion-label>
+        <ion-input name="pPassword" type ="password" [(ngModel)] = "user.pPassword"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button color="warning" (click)="do_login();">Autenticar</ion-button>
+
+</form>
+
+</ion-content>
