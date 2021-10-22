@@ -23,6 +23,7 @@ export class LoginPage implements OnInit {
 
   }
 
+
   do_login(){
     console.log(this.user);
     this.restService.login(this.user);

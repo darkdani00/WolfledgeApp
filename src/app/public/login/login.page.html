@@ -1,23 +1,54 @@
-<ion-content padding color="danger">
-<ion-card-header padding color ="primary">
-  Bienvenido a la app de Escuela perro
+<ion-content >
+<ion-card-header padding color ="dark">
+  <center>Bienvenido a Wolfledge</center>
 </ion-card-header>
+<br>
+  <center>
+
+    <ion-label>¿Qué es Wolfledge?</ion-label>
+  </center>
+  <ion-item>
+    <p>Es una aplicación y página web que ayuda al crecimiento de conocimiento.
+      Dando ayuda a los alumnos que requieran un tema que aprender, todo es totalmente ¡Grátis!
+    </p>
+  </ion-item>
+
+<br>
+
 <form action="">
-  <ion-card>
+  <ion-card color="dark" class="card-center">
+    <br>
+    <ion-label>
+      <center>
+  
+        Ingresa tu correo y contraseña
+      </center>
+    </ion-label>
+    <br>
     <ion-card-content>
-      <ion-item>
-        <ion-label>Email: </ion-label>
+      <ion-item color="dark">
+        <ion-label><ion-icon name="mail-outline"></ion-icon> Correo: </ion-label>
         <ion-input name="pEmail" [(ngModel)] = "user.pEmail"></ion-input>
+        
       </ion-item>
-      <ion-item>
-        <ion-label>Password: </ion-label>
+      <ion-item color = "dark">
+        <ion-label><ion-icon name="key-outline"></ion-icon> Contraseña: </ion-label>
         <ion-input name="pPassword" type ="password" [(ngModel)] = "user.pPassword"></ion-input>
       </ion-item>
     </ion-card-content>
-  </ion-card>
+    <a routerLink="/creacion">
+      <center>
+        ¿No tienes cuenta? / Crea una nueva
+      </center>
+    </a>
 
-  <ion-button color="warning" (click)="do_login();">Autenticar</ion-button>
+  </ion-card>
+<br>
+    <ion-button expand="block" fill="outline" color="medium" (click)="do_login();">Iniciar Sesión</ion-button>
 
 </form>
+
+
+
 
 </ion-content>

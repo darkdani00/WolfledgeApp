@@ -92,7 +92,18 @@ export class RestService {
 
   async logout(){
     const loading = await this.loadingController.create({
-      message: 'Cerrando sesión...'
+      message: 'Cerrando sesión'
+    });
+    await loading.present();
+    loading.dismiss();
+    localStorage.removeItem('token');
+    this.storage.remove('sw14_sess');
+    this.authState.next(false);
+  }
+
+  async cambio(){
+    const loading = await this.loadingController.create({
+      message: 'Regresando'
     });
     await loading.present();
     loading.dismiss();

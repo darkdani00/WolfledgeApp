@@ -1,0 +1,100 @@
+<ion-header padding color="dark">
+  <ion-toolbar color="dark">
+    <ion-title>
+      <center>
+        Creacion de cuenta
+      </center>
+    </ion-title>
+    <ion-icon (click)="close_sess();" name="arrow-back"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-row class="ion-justify-content-center">
+    <ion-col size-sm="6" size-md="6" size-lg="12" size="12" color="primary"> 
+      <ion-card>
+        <form (ngSubmit)="guardar_usuario();"  [formGroup]="creacionForm">
+          <ion-card-content>
+              <!-- input -->
+              <ion-item>
+                <ion-label position="floating">Nombre:</ion-label>
+                <ion-input type="text" formControlName="pName"></ion-input>
+              </ion-item>
+              <div class="ion-text-end" *ngIf="form_sent && creacionForm.controls.pName.invalid">
+                <ion-text color="danger">Nombre requerido.</ion-text>
+              </div>
+              <!-- input -->
+              <ion-item>
+                <ion-label position="floating">Apellido Paterno:</ion-label>
+                <ion-input type="text" formControlName="pApellido1"></ion-input>
+              </ion-item>
+              <div class="ion-text-end" *ngIf="form_sent && creacionForm.controls.pApellido1.invalid">
+                <ion-text color="danger">Apellido requerido.</ion-text>
+              </div>
+              <!-- input -->
+              <ion-item>
+                <ion-label position="floating">Apellido Materno:</ion-label>
+                <ion-input type="text" formControlName="pApellido2"></ion-input>
+              </ion-item>
+              <div class="ion-text-end" *ngIf="form_sent && creacionForm.controls.pApellido2.invalid">
+                <ion-text color="danger">Apellido requerido.</ion-text>
+              </div>
+              <!-- input -->
+              <ion-item>
+                <ion-label position="floating">Edad:</ion-label>
+                <ion-input type="text" formControlName="pEdad"></ion-input>
+              </ion-item>
+              <div class="ion-text-end" *ngIf="form_sent && creacionForm.controls.pEdad.invalid">
+                <ion-text color="danger">Edad requerido.</ion-text>
+              </div>
+              <!-- input -->
+              <ion-item>
+                <ion-label position="floating">Pais:</ion-label>
+                <ion-input type="text" formControlName="pPais"></ion-input>
+              </ion-item>
+              <div class="ion-text-end" *ngIf="form_sent && creacionForm.controls.pPais.invalid">
+                <ion-text color="danger">Pais requerido.</ion-text>
+              </div>
+              <!-- input -->
+              <ion-item>
+                <ion-label position="floating">Correo:</ion-label>
+                <ion-input type="email" formControlName="pEmail"></ion-input>
+              </ion-item>
+              <div class="ion-text-end" *ngIf="form_sent && creacionForm.controls.pEmail.invalid">
+                <ion-text color="danger">Correo requerido.</ion-text>
+              </div>
+              <!-- input -->
+              <ion-item>
+                <ion-label position="floating">Contraseña:</ion-label>
+                <ion-input type="password" formControlName="pPassword"></ion-input>
+              </ion-item>
+              <div class="ion-text-end" *ngIf="form_sent && creacionForm.controls.pPassword.invalid">
+                <ion-text color="danger">Contraseña requerida.</ion-text>
+              </div>
+              <!-- input -->
+              <ion-label>
+                ¿Te gustaría crear tu propia clase? Si es así, selecciona "Profesor"
+              </ion-label>
+              <ion-item>
+                <ion-label position="floating">Tipo:</ion-label>
+                <ion-select formControlName="pPrivilegios">
+                  <ion-select-option value="Profesor">Profesor</ion-select-option>
+                  <ion-select-option value="Estudiante">Estudiante</ion-select-option>
+                </ion-select>
+              </ion-item>
+              <div class="ion-text-end" *ngIf="form_sent && creacionForm.controls.pPrivilegios.invalid">
+                <ion-text color="danger">Tipo requerido.</ion-text>
+              </div>
+              <!-- input -->
+
+          </ion-card-content>
+          <ion-row>
+            <ion-col class="ion-text-center">
+              <ion-button expand="block" fill="outline" type="submit">Registrar</ion-button>
+            </ion-col>
+          </ion-row>
+        </form>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>
