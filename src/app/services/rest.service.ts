@@ -37,7 +37,7 @@ export class RestService {
     });
     await loading.present();
     console.info(this.apiUrl);
-    return this.http.post<any>(this.apiUrl+"usuario/api/login",_data).subscribe(result =>{
+    return this.http.post<any>(this.apiUrl+"usuario/api/login_mobile",_data).subscribe(result =>{
       loading.dismiss();
       if(result.status == "success"){
         this.storage.set('sw14_sess',result.data);
