@@ -1,127 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header [translucent]="true" padding color="dark">
+  <ion-toolbar color="dark">
+
+    <ion-buttons slot="start">
+      <ion-menu-button color="light" menu="first"></ion-menu-button>
+    </ion-buttons>
     <ion-title>
-      Blank
+      <center>
+        Bienvenido a Wolfledge
+      </center>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button (click) = "close_sess();" color="primary">
-    Cerrar sesión
-  </ion-button>
 
-      <ion-row class="ion-justify-content-center">
-        <ion-col size-sm="6" size-md="6" size-lg="12" size="12" color="primary"> 
-          <ion-card>
-            <form (ngSubmit)="guardar_historia();" [formGroup]="citaForm">
-              <ion-card-content>
-                  <!-- input -->
-                  <ion-item>
-                    <ion-label position="floating">Paciente:</ion-label>
-                    <ion-input type="text" formControlName="hpaciente"></ion-input>
-                  </ion-item>
-                  <div class="ion-text-end" *ngIf="form_sent && citaForm.controls.hpaciente.invalid">
-                    <ion-text color="danger">Paciente requerido.</ion-text>
-                  </div>
-                  <!-- input -->
-                  <ion-item>
-                    <ion-label position="floating">CURP:</ion-label>
-                    <ion-input type="text" formControlName="hcurp"></ion-input>
-                  </ion-item>
-                  <div class="ion-text-end" *ngIf="form_sent && citaForm.controls.hcurp.invalid">
-                    <ion-text color="danger">CURP requerido.</ion-text>
-                  </div>
-                  <!-- input -->
-                  <ion-item>
-                    <ion-label>Fecha nacimiento:</ion-label>
-                    <ion-datetime displayFormat="YYYY-MM-DD" formControlName="hfecha"></ion-datetime>
-                  </ion-item>
-                  <div class="ion-text-end" *ngIf="form_sent && citaForm.controls.hfecha.invalid">
-                    <ion-text color="danger">Fecha  requerida.</ion-text>
-                  </div>
-                  <!-- input -->
-                  <ion-item>
-                    <ion-label>Genero:</ion-label>
-                    <ion-input type="text" formControlName="hgenero"></ion-input>
-                  </ion-item>
-                  <div class="ion-text-end" *ngIf="form_sent && citaForm.controls.hgenero.invalid">
-                    <ion-text color="danger">Genero requerida.</ion-text>
-                  </div>
-                  <!-- input -->
-                  <ion-item>
-                    <ion-label position="floating">Frecuencia:</ion-label>
-                    <ion-input type="text" formControlName="hfrecuencia"></ion-input>
-                  </ion-item>
-                  <div class="ion-text-end" *ngIf="form_sent && citaForm.controls.hfrecuencia.invalid">
-                    <ion-text color="danger">Frecuencia requerido.</ion-text>
-                  </div>
-                  <!-- input -->
-                  <ion-item>
-                    <ion-label position="floating">Peso:</ion-label>
-                    <ion-input type="number" formControlName="hpeso"></ion-input>
-                  </ion-item>
-                  <div class="ion-text-end" *ngIf="form_sent && citaForm.controls.hpeso.invalid">
-                    <ion-text color="danger">Peso requerido.</ion-text>
-                  </div>
-                  <!-- input -->
-                  <ion-item>
-                    <ion-label position="floating">Estatura:</ion-label>
-                    <ion-input type="number" formControlName="hestatura"></ion-input>
-                  </ion-item>
-                  <div class="ion-text-end" *ngIf="form_sent && citaForm.controls.hestatura.invalid">
-                    <ion-text color="danger">Estatura requerido.</ion-text>
-                  </div>
-                  <!-- input -->
-                  <ion-item>
-                    <ion-label position="floating">Antecedentes:</ion-label>
-                    <ion-input type="text" formControlName="hantecedentes"></ion-input>
-                  </ion-item>
-                  <div class="ion-text-end" *ngIf="form_sent && citaForm.controls.hantecedentes.invalid">
-                    <ion-text color="danger">Antecedentes requerido.</ion-text>
-                  </div>
-                  <!-- input -->
-                  <ion-item>
-                    <ion-label position="floating">Padecimiento Actual:</ion-label>
-                    <ion-input type="text" formControlName="hpadecimiento"></ion-input>
-                  </ion-item>
-                  <div class="ion-text-end" *ngIf="form_sent && citaForm.controls.hpadecimiento.invalid">
-                    <ion-text color="danger">Padecimiento Actual requerido.</ion-text>
-                  </div>
-                  <!-- input -->
-                  <ion-item>
-                    <ion-label position="floating">Alergias:</ion-label>
-                    <ion-input type="text" formControlName="halergias"></ion-input>
-                  </ion-item>
-                  <div class="ion-text-end" *ngIf="form_sent && citaForm.controls.halergias.invalid">
-                    <ion-text color="danger">Alergias requerido.</ion-text>
-                  </div>
-                  <!-- input -->
-                  <ion-item>
-                    <ion-label position="floating">Obvservaciones:</ion-label>
-                    <ion-input type="text" formControlName="hobservaciones"></ion-input>
-                  </ion-item>
-                  <div class="ion-text-end" *ngIf="form_sent && citaForm.controls.hobservaciones.invalid">
-                    <ion-text color="danger">Observaciones requerido.</ion-text>
-                  </div>
-                  <!-- input -->
-                  <ion-item>
-                    <ion-label position="floating">Doctor:</ion-label>
-                    <ion-input type="text" formControlName="hdoctor"></ion-input>
-                  </ion-item>
-                  <div class="ion-text-end" *ngIf="form_sent && citaForm.controls.hdoctor.invalid">
-                    <ion-text color="danger">Doctor requerido.</ion-text>
-                  </div>
-              </ion-card-content>
-              <ion-row>
-                <ion-col class="ion-text-center">
-                  <ion-button expand="block" fill="outline" type="submit">Registrar</ion-button>
-                </ion-col>
-              </ion-row>
-            </form>
-          </ion-card>
-        </ion-col>
-      </ion-row>
+
+  
+      
     </ion-content>
 
 

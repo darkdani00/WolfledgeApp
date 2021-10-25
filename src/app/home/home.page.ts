@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RestService } from '../services/rest.service';
 import {FormControl,FormGroup,FormBuilder,Validator,Validators} from "@angular/forms";
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,7 @@ export class HomePage {
   constructor(
       private restService : RestService,
       private formBuilder: FormBuilder,
+      private menu: MenuController,
   ) {
     this.restService.authUserData().then(result=>{
         this.session = result;
@@ -42,9 +44,7 @@ export class HomePage {
     } )
   }
 
-  close_sess(){
-      this.restService.logout();
-  }
+
 
 /*
   async guardar_cita(){

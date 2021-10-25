@@ -25,4 +25,9 @@ export class AppComponent {
       });
     });
   }
+  
+
+  close_sess(){
+    this.restService.logout();
+}
 }
