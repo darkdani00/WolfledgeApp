@@ -76,7 +76,9 @@ export class RestService {
       loading.dismiss();
     });
   }
-
+  do_get(_resource){
+    return this.http.get<any>(this.apiUrl+_resource);
+  }
   post_method(_uri : string,_data : any){
     return this.http.post<any>(this.apiUrl+_uri,_data);
   }

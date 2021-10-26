@@ -15,15 +15,26 @@
 <ion-content [fullscreen]="true">
 
   <ion-list>
-    <ion-list-header>
-      Lista de Clases
-    </ion-list-header>
+      <h1>
+        <center>
+          Clases
+        </center>
+      </h1>
 
     <ion-item *ngFor="let clase of clases_lista" >
       <ion-label>
-        <h2>{{clase.album_name }}</h2>
-        <h3>{{clase.album_date_released}} - {{clase.album_time_released }}</h3>
-        <p>{{clase.artist_name }} - {{clase.genre_name }}</p>
+        <h2>
+          {{clase.Nombre_Profesor}}    
+        </h2>
+        <h3>{{clase.nombre_especialidad}}</h3> <h3>Por: {{clase.link_clase}}</h3>
+        <p>{{clase.descripcion_clase}}</p>
+        <h4>Horarios: {{clase.horario_inicio_clase}} de {{clase.horario_fin_clase }}</h4>
+        <h4>Fechas: {{clase.fecha_inicio}} a {{clase.fecha_fin }}</h4>
+        <p>
+          <center>
+            {{clase.estatus_clase}}
+          </center>
+        </p>
       </ion-label>
     </ion-item>
   </ion-list>

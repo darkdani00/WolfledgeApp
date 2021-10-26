@@ -30,22 +30,12 @@ export class HomePage {
   }
 
   load_clases(){
-    this.restService.get_method("clases/api/clases",).subscribe(data =>{
+    this.restService.do_get("clase/api/clase",).subscribe(data =>{
       this.clases_lista = data.data;
     });
   }
 
-/*
-  async guardar_cita(){
-    this.form_sent = true;
-    if(this.citaForm.valid){
-      console.info(this.citaForm.value);
-      this.restService.post_method('users/api/citas',this.citaForm.value).subscribe( result => {
-        this.restService.display_toast("Información cargada correctamente","success",result,"top",400);
-      })
-    }
-  }
-*/
+
 
   
 
