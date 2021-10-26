@@ -1,9 +1,94 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Registro</ion-title>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Registro de Clase</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size-md="6" size-lg="12" size="12" color="primary">
+      <ion-card>
+        <form (ngSubmit)="guardar_clase();" [formGroup]="claseForm">
+          <ion-card-content>
 
+            <ion-item>
+              <ion-label position="floating">Descripción de clase</ion-label>
+              <ion-input type="text" formControlName="pDesc"></ion-input>
+            </ion-item>
+            <div class="ion-text-end" *ngIf="form_sent && claseForm.controls.pDesc.invalid">
+              <ion-text color="danger">Descripción requerida</ion-text>
+            </div>
+            
+            <ion-item>
+              <ion-label>Fehca de Inicio</ion-label>
+              <ion-datetime displayFormat="YYYY-MM-DD" formControlName="pFechaInicio"></ion-datetime>
+            </ion-item>
+            <div class="ion-text-end" *ngIf="form_sent && claseForm.controls.pFechaInicio.invalid">
+              <ion-text color="danger">Fecha Inicial requerida</ion-text>
+            </div>
+
+            <ion-item>
+              <ion-label>Fehca Final</ion-label>
+              <ion-datetime displayFormat="YYYY-MM-DD" formControlName="pFechaFin"></ion-datetime>
+            </ion-item>
+            <div class="ion-text-end" *ngIf="form_sent && claseForm.controls.pFechaFin.invalid">
+              <ion-text color="danger">Fecha Final requerida</ion-text>
+            </div>
+
+            <ion-item>
+              <ion-label>Hora de Inicio</ion-label>
+              <ion-datetime displayFormat="HH:mm" formControlName="pHoraInicio"></ion-datetime>
+            </ion-item>
+            <div class="ion-text-end" *ngIf="form_sent && claseForm.controls.pHoraInicio.invalid">
+              <ion-text color="danger">Hora Inicial requerida</ion-text>
+            </div>
+
+            <ion-item>
+              <ion-label>Hora Final</ion-label>
+              <ion-datetime displayFormat="HH:mm" formControlName="pHoraFinal"></ion-datetime>
+            </ion-item>
+            <div class="ion-text-end" *ngIf="form_sent && claseForm.controls.pHoraFinal.invalid">
+              <ion-text color="danger">Hora Final requerida</ion-text>
+            </div>
+            
+            <ion-item>
+              <ion-label>Método de Clase: </ion-label>
+              <ion-select placeholdder="Selecciona uno" formControlName="pMaterial">
+                <ion-select-option value="{{material.id_material}}" *ngFor="let material of modo_lista">{{material.link_clase}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <div class="ion-text-end" *ngIf="form_sent && claseForm.controls.pMaterial.invalid">
+              <ion-text color="danger">Método requerido</ion-text>
+            </div>
+
+            <ion-item>
+              <ion-label>Especialidad: </ion-label>
+              <ion-select placeholdder="Selecciona uno" formControlName="pEsp">
+                <ion-select-option value="{{especialidad.id_especialidad}}"  *ngFor="let especialidad of especialidad_lista">{{especialidad.nombre_especialidad}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <div class="ion-text-end" *ngIf="form_sent && claseForm.controls.pEsp.invalid">
+              <ion-text color="danger">Especialidad requerida</ion-text>
+            </div>
+
+            <ion-item>
+              <ion-label>Profesor: </ion-label>
+              <ion-select placeholdder="Selecciona uno" formControlName="pProfe">
+                <ion-select-option value="{{usuario.id_usuario}}"  *ngFor="let usuario of profesores_lista">{{usuario.nombre_usuario}} {{usuario.apellido1_usuario}} {{usuario.apellido2_usuario}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <div class="ion-text-end" *ngIf="form_sent && claseForm.controls.pProfe.invalid">
+              <ion-text color="danger">Profesor requerid@</ion-text>
+            </div>
+
+            <ion-button type="submit" expand="block" fill="outline">Registrar</ion-button>
+            <!-- <ion-button *ngIf="clase_seleccionada" type="button" expand="block" fill="outline" color="danger" (click)="eliminar();">Eliminar</ion-button> -->
+          </ion-card-content>
+        </form>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 </ion-content>

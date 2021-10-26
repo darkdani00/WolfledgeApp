@@ -14,7 +14,6 @@ export class HomePage {
 
 
     session;
-    form_sent = false;
 
   constructor(
       private restService : RestService,

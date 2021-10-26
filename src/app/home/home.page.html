@@ -21,7 +21,7 @@
         </center>
       </h1>
 
-    <ion-item *ngFor="let clase of clases_lista" >
+    <ion-item *ngFor="let clase of clases_lista"(click)="clase_seleccionada(clase);" >
       <ion-label>
         <h2>
           {{clase.Nombre_Profesor}}    

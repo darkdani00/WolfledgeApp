@@ -33,7 +33,7 @@ export class RestService {
 
   async login(_data : any){
     const loading = await this.loadingController.create({
-      message: 'Verificando Usuario...'
+      message: 'Iniciando Sesión...'
     });
     await loading.present();
     console.info(this.apiUrl);
