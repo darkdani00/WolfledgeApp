@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
 import { EspecialidadesPageRoutingModule } from './especialidades-routing.module';
+import { EspecialidadModalPageModule } from '../modales/especialidad-modal/especialidad-modal.module';
 
 import { EspecialidadesPage } from './especialidades.page';
 
@@ -13,7 +14,8 @@ import { EspecialidadesPage } from './especialidades.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    EspecialidadesPageRoutingModule
+    EspecialidadesPageRoutingModule,
+    EspecialidadModalPageModule
   ],
   declarations: [EspecialidadesPage]
 })

@@ -23,7 +23,12 @@ const routes: Routes = [
   },
   {
     path: 'especialidades',
-    loadChildren: () => import('./especialidades/especialidades.module').then( m => m.EspecialidadesPageModule)
+    loadChildren: () => import('./especialidades/especialidades.module').then( m => m.EspecialidadesPageModule),
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'especialidad-modal',
+    loadChildren: () => import('./modales/especialidad-modal/especialidad-modal.module').then( m => m.EspecialidadModalPageModule)
   },
 ];
 

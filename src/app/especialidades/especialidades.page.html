@@ -1,9 +1,47 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>especialidades</ion-title>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Especialidades</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <center>
+  <h2>
+    Bienvenido
+  </h2>
+  <br>
+  <ion-button size="small" (click)="crear_especialidad();">
+    <ion-icon name="add-outline"></ion-icon>Registrar Especialidad
+  </ion-button>
+</center>
+<br>
+
+  <ion-list>
+    <h1>
+      <center>
+        Lista de Especialidades
+      </center>
+    </h1>
+
+  <ion-item *ngFor="let especialdiad of especialidad_lista"(click)="especialidad_seleccionada(especialdiad);" >
+    <ion-label>
+      <h2>
+        <center>
+          {{especialdiad.nombre_especialidad}}    
+        </center>
+      </h2>
+      <br>
+      <p color="warning">
+
+        <center>
+          {{especialdiad.estatus_especialidad}}
+        </center>
+      </p>
+    </ion-label>
+  </ion-item>
+</ion-list>
 
 </ion-content>
