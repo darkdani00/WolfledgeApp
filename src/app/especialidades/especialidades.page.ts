@@ -5,8 +5,6 @@ import { EspecialidadModalPage } from '../modales/especialidad-modal/especialida
 import { RestService } from '../services/rest.service';
 
 
-
-
 @Component({
   selector: 'app-especialidades',
   templateUrl: './especialidades.page.html',
@@ -21,11 +19,12 @@ export class EspecialidadesPage implements OnInit {
     private restService : RestService,
   ) { 
   this.cargar_especialidades();
-
   }
 
   ngOnInit() {
   }
+
+
 
   async crear_especialidad(){
     const modal = await this.modalController.create({
@@ -36,6 +35,8 @@ export class EspecialidadesPage implements OnInit {
     });
     return await modal.present();
   }
+
+
 
   cargar_especialidades(){
     this.restService.do_get("especialidad/api/especialidad").subscribe(data =>{
@@ -48,7 +49,7 @@ export class EspecialidadesPage implements OnInit {
     const modal = await this.modalController.create({
       component: EspecialidadModalPage,
       componentProps : {
-        "selected_especialidad" : _especialidad
+        "especialidad_seleccionada" : _especialidad
       }
     });
     modal.onDidDismiss().then((data) => {
