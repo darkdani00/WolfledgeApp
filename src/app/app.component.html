@@ -1,6 +1,6 @@
 <ion-app>
 
-  <ion-menu side="start" menuId="first" contentId="main">
+  <ion-menu auto-hide="true" side="start" menuId="first" contentId="main">
     <ion-header>
       <ion-toolbar color="dark">
         <ion-title>Menú Principal</ion-title>
@@ -8,12 +8,12 @@
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item routerLink="/perfil"><ion-icon name="person"></ion-icon> Perfil</ion-item>
-        <ion-item routerLink="/registro"><ion-icon name="add-circle-outline"></ion-icon> Crear Clase</ion-item>
-        <ion-item routerLink="/home"><ion-icon name="school-outline"></ion-icon> Clases</ion-item>
+        <ion-item (click)="openEnd();" routerLink="/perfil"><ion-icon name="person"></ion-icon> Perfil</ion-item>
+        <ion-item (click)="openEnd();" routerLink="/registro"><ion-icon name="add-circle-outline"></ion-icon> Crear Clase</ion-item>
+        <ion-item (click)="openEnd();" routerLink="/home"><ion-icon name="school-outline"></ion-icon> Clases</ion-item>
         <!--<ion-item routerLink="/clases"><ion-icon name="people"></ion-icon> Mis Clases</ion-item>-->
-        <ion-item routerLink="/clases"><ion-icon name="people"></ion-icon> Modo de Clase </ion-item>
-        <ion-item routerLink="/especialidades"><ion-icon name="clipboard"></ion-icon> Especialidades</ion-item>
+        <ion-item (click)="openEnd();" routerLink="/modos"><ion-icon name="people"></ion-icon> Modo de Clase </ion-item>
+        <ion-item (click)="openEnd();" routerLink="/especialidades"><ion-icon name="clipboard"></ion-icon> Especialidades</ion-item>
         <ion-item (click) = "close_sess();"><ion-icon name="log-in-outline"></ion-icon> Cerrar Sesión</ion-item>
       </ion-list>
     </ion-content>

@@ -30,6 +30,14 @@ const routes: Routes = [
     path: 'especialidad-modal',
     loadChildren: () => import('./modales/especialidad-modal/especialidad-modal.module').then( m => m.EspecialidadModalPageModule)
   },
+  {
+    path: 'modos',
+    loadChildren: () => import('./modos/modos.module').then( m => m.ModosPageModule)
+  },
+  {
+    path: 'modos-modal',
+    loadChildren: () => import('./modales/modos-modal/modos-modal.module').then( m => m.ModosModalPageModule)
+  },
 ];
 
 @NgModule({
