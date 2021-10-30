@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content>
+
   <center>
     <P>¿Deseas crear un nuevo modo de clase?</P>
     <ion-button class="round outline" (click)="crear_modo();">
@@ -16,11 +17,17 @@
     <br>
     <h2>Listado de Modos de Clases que existen</h2>
   </center>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>hola</ion-refresher-content>
+  </ion-refresher>
 
   <ion-list>
 
   <ion-item *ngFor="let material of modo_list"(click)="material_seleccionado(material);" >
     <ion-label>
+
+          
+
       <h2>
         <center>
           {{material.link_clase}}    
@@ -33,6 +40,7 @@
           {{material.estatus_material}}
         </center>
       </p>
+
     </ion-label>
   </ion-item>
 </ion-list>

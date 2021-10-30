@@ -1,9 +1,36 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>modos-modal</ion-title>
+  <ion-toolbar color="dark">
+    <ion-button color="danger" (click)="dismiss();" slot="end">
+      <ion-icon name="close-circle-outline"></ion-icon>
+    </ion-button>
+    <ion-title>Modo de Clase</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-row class="ion-justify-content-center">
+    <center>
+      <h2>¿De qué modo se va a tomar la clase?</h2>
+      <br>
+    </center>
+    <br>
+    <ion-col size-md="6" size-lg="12" size="12" color="primary">
+      <ion-card>
+        <form (ngSubmit)="guardar_modo();" [formGroup]="modoForm">
+          <ion-card-content>
 
+            <ion-item>
+              <ion-label position="floating">Nombre: </ion-label>
+              <ion-input type="text" formControlName="pName"></ion-input>
+            </ion-item>
+            <div class="ion-text-end" *ngIf="form_sent && modoForm.controls.pName.invalid">
+              <ion-text color="danger">Nombre de especialdiad requerido</ion-text>
+            </div>
+
+            <ion-button type="submit" expand="block" fill="outline">Registrar</ion-button>
+          </ion-card-content>
+        </form>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 </ion-content>
